@@ -1,7 +1,811 @@
 <!doctype html>
-<html>
-  <head><title>Test</title></head>
-  <body>
-    <h1>Hello, Karen 🌿</h1>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Huy Gia Han (Karen) Vu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #fbfbff;
+      --panel: rgba(255,255,255,.7);
+      --text: #243043;
+      --muted: #5d6a7a;
+      --border: rgba(22, 35, 55, .10);
+      --shadow: 0 18px 55px rgba(20, 35, 55, .10);
+
+      /* Pastels */
+      --sky: #cfe9ff;
+      --mint: #d9f7e8;
+      --lav: #ebe3ff;
+      --blush: #ffe2ea;
+      --butter: #fff2cc;
+
+      /* Accents */
+      --accent: #3a7bd5;
+      --accent2: #6a5acd;
+      --good: #1f9d74;
+      --warn: #b97300;
+
+      --radius: 20px;
+      --radius2: 28px;
+      --max: 1080px;
+    }
+
+    /* Twilight mode*/
+    [data-theme="twilight"]{
+      --bg: #0f1420;
+      --panel: rgba(255,255,255,.07);
+      --text: #eaf0ff;
+      --muted: rgba(234,240,255,.72);
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 18px 55px rgba(0,0,0,.35);
+      --accent: #8bd3ff;
+      --accent2: #b7a5ff;
+    }
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      color: var(--text);
+      background: radial-gradient(1200px 800px at 15% 10%, var(--sky) 0%, transparent 55%),
+                  radial-gradient(900px 700px at 85% 25%, var(--lav) 0%, transparent 55%),
+                  radial-gradient(900px 700px at 35% 95%, var(--mint) 0%, transparent 60%),
+                  radial-gradient(700px 500px at 85% 90%, var(--blush) 0%, transparent 55%),
+                  var(--bg);
+      font-family: "Nunito", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body{ position: relative; }
+
+    body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    opacity: .16;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 220 220'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.85'%3E%3Cpath d='M110 86c14-20 30-20 44 0-22 7-22 33 0 40-14 20-30 20-44 0-14 20-30 20-44 0 22-7 22-33 0-40 14-20 30-20 44 0Z'/%3E%3Ccircle cx='110' cy='106' r='10'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 220px 220px;
+    mix-blend-mode: overlay;
+    z-index: -1;  /* <-- THIS is the key */
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; text-underline-offset: 3px; }
+
+    .container{ max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /*Top Nav*/
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(12px);
+      background: linear-gradient(to bottom, rgba(255,255,255,.55), rgba(255,255,255,.18));
+      border-bottom: 1px solid var(--border);
+    }
+    [data-theme="twilight"] header{
+      background: linear-gradient(to bottom, rgba(15,20,32,.72), rgba(15,20,32,.35));
+    }
+
+    .nav{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 0;
+    }
+
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .logo{
+      width: 36px;
+      height: 36px;
+      border-radius: 14px;
+      background:
+        radial-gradient(18px 18px at 30% 35%, rgba(255,255,255,.95) 0%, rgba(255,255,255,.0) 60%),
+        linear-gradient(135deg, var(--mint), var(--sky), var(--lav));
+      box-shadow: 0 10px 22px rgba(0,0,0,.10);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* a tiny “water ripple” cutout */
+    .logo::after{
+      content: "";
+      position: absolute;
+      inset: -6px;
+      background: radial-gradient(circle at 35% 45%, rgba(58,123,213,.22) 0%, rgba(58,123,213,0) 55%);
+      filter: blur(0.3px);
+    }
+
+    .navlinks{
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .chip{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+      font-weight: 700;
+      color: var(--muted);
+    }
+    [data-theme="twilight"] .chip{ background: rgba(255,255,255,.06); }
+
+    .chip:hover{ text-decoration: none; color: var(--text); }
+
+    .btn{
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.7);
+      color: var(--text);
+      font-family: inherit;
+      padding: 10px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+    [data-theme="twilight"] .btn{ background: rgba(255,255,255,.07); }
+
+    .btn:hover{ transform: translateY(-1px); }
+    .btn:active{ transform: translateY(0px); }
+
+    .sr-only{
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /*Hero*/
+    .hero{
+      position: relative;
+      padding: 60px 0 32px;
+      z-index: 1;
+    }
+
+    .heroGrid{
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 900px){
+      .heroGrid{ grid-template-columns: 1fr; }
+    }
+
+    .card{
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius2);
+      overflow: hidden;
+    }
+
+    .heroMain{
+      padding: 28px 26px 26px;
+      position: relative;
+    }
+
+    .heroMain::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(520px 280px at 25% 15%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 60%),
+        radial-gradient(520px 280px at 85% 35%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 60%);
+      pointer-events: none;
+      opacity: .65;
+    }
+
+    .headline{
+      position: relative;
+      margin: 0;
+      font-size: clamp(28px, 3.3vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.6px;
+    }
+
+    .sub{
+      position: relative;
+      margin: 14px 0 18px;
+      font-size: 17px;
+      color: var(--muted);
+      max-width: 62ch;
+    }
+
+    .pillRow{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+      position: relative;
+    }
+
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      font-weight: 800;
+      gap: 8px;
+    }
+    [data-theme="twilight"] .pill{ background: rgba(255,255,255,.06); }
+
+    .pill small{ font-weight: 800; opacity: .75; }
+
+    .ctaRow{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; position: relative; }
+
+    .ctaPrimary{
+      background: linear-gradient(135deg, rgba(58,123,213,.18), rgba(106,90,205,.18));
+      border: 1px solid rgba(58,123,213,.25);
+    }
+
+    .ctaPrimary:hover{ text-decoration: none; }
+
+    .ctaPrimary strong{ color: var(--text); }
+
+    .heroSide{
+      padding: 22px;
+      display: grid;
+      gap: 12px;
+      align-content: start;
+      position: relative;
+    }
+
+    .profile{
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .avatar{
+      width: 58px;
+      height: 58px;
+      border-radius: 22px;
+      border: 1px solid var(--border);
+      background:
+        radial-gradient(22px 22px at 30% 30%, rgba(255,255,255,.85) 0%, rgba(255,255,255,0) 60%),
+        linear-gradient(135deg, var(--blush), var(--mint), var(--lav));
+      box-shadow: 0 12px 26px rgba(0,0,0,.10);
+    }
+
+    .meta h2{ margin: 0; font-size: 18px; letter-spacing: -.2px; }
+    .meta p{ margin: 2px 0 0; color: var(--muted); font-weight: 700; }
+
+    .miniGrid{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mini{
+      padding: 12px 12px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+    }
+    [data-theme="twilight"] .mini{ background: rgba(255,255,255,.06); }
+
+    .mini b{ display: block; font-size: 14px; }
+    .mini span{ color: var(--muted); font-weight: 800; font-size: 13px; }
+
+    .wave{
+      position: relative;
+      margin-top: 26px;
+      height: 42px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: linear-gradient(90deg, rgba(207,233,255,.65), rgba(217,247,232,.65), rgba(235,227,255,.65), rgba(255,226,234,.65));
+    }
+
+    .wave::before{
+      content: "";
+      position: absolute;
+      inset: -40px 0 0 0;
+      background: radial-gradient(80px 30px at 20% 55%, rgba(255,255,255,.65) 0%, rgba(255,255,255,0) 70%),
+                  radial-gradient(110px 40px at 55% 62%, rgba(255,255,255,.55) 0%, rgba(255,255,255,0) 70%),
+                  radial-gradient(90px 35px at 85% 50%, rgba(255,255,255,.60) 0%, rgba(255,255,255,0) 70%);
+      animation: drift 9s ease-in-out infinite;
+      opacity: .75;
+    }
+
+    @keyframes drift{
+      0%{ transform: translateX(-2%); }
+      50%{ transform: translateX(2%); }
+      100%{ transform: translateX(-2%); }
+    }
+
+    /*Sections*/
+    section{ padding: 34px 0; position: relative; z-index: 1; }
+
+    .sectionTitle{
+      margin: 0 0 14px;
+      font-size: 22px;
+      letter-spacing: -.3px;
+    }
+
+    .grid2{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 900px){
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    .panel{
+      padding: 18px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .muted{ color: var(--muted); font-weight: 700; }
+
+    .tags{ display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .tag{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      font-weight: 800;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    [data-theme="twilight"] .tag{ background: rgba(255,255,255,.06); }
+
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 980px){
+      .cards{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 650px){
+      .cards{ grid-template-columns: 1fr; }
+    }
+
+    .proj{
+      padding: 16px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 14px 35px rgba(20,35,55,.09);
+      display: grid;
+      gap: 10px;
+      min-height: 170px;
+      position: relative;
+      overflow: hidden;
+    }
+    [data-theme="twilight"] .proj{ background: rgba(255,255,255,.07); }
+
+    .proj::before{
+      content: "";
+      position: absolute;
+      inset: -50px -40px auto auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.65) 0%, rgba(255,255,255,0) 60%),
+                  linear-gradient(135deg, rgba(207,233,255,.75), rgba(235,227,255,.75));
+      opacity: .8;
+      transform: rotate(18deg);
+    }
+
+    .proj h3{ margin: 0; font-size: 16px; letter-spacing: -.2px; position: relative; }
+    .proj p{ margin: 0; color: var(--muted); font-weight: 700; position: relative; }
+
+    .proj .row{ display: flex; gap: 10px; flex-wrap: wrap; position: relative; }
+
+    .linkRow{ margin-top: auto; display: flex; gap: 10px; flex-wrap: wrap; position: relative; }
+
+    .link{
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.55);
+      font-weight: 900;
+      font-size: 13px;
+      color: var(--text);
+      text-decoration: none;
+    }
+    [data-theme="twilight"] .link{ background: rgba(255,255,255,.06); }
+
+    .link:hover{ transform: translateY(-1px); }
+
+    .timeline{ display: grid; gap: 12px; }
+
+    .item{
+      padding: 14px 14px;
+      border-radius: var(--radius2);
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.62);
+      box-shadow: 0 14px 35px rgba(20,35,55,.09);
+    }
+    [data-theme="twilight"] .item{ background: rgba(255,255,255,.07); }
+
+    .itemTop{ display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; }
+    .itemTop b{ font-size: 15px; }
+    .itemTop span{ font-weight: 800; color: var(--muted); }
+    .item p{ margin: 8px 0 0; color: var(--muted); font-weight: 700; }
+
+    /*Footer*/
+    footer{
+      padding: 30px 0 44px;
+      color: var(--muted);
+      position: relative;
+      z-index: 1;
+    }
+
+    .foot{
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .toast{
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+      padding: 12px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.85);
+      color: var(--text);
+      box-shadow: var(--shadow);
+      font-weight: 900;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+      z-index: 99;
+    }
+    [data-theme="twilight"] .toast{ background: rgba(15,20,32,.85); }
+    .toast.show{ opacity: 1; transform: translateX(-50%) translateY(-6px); }
+
+    /* subtle focus style */
+    :focus-visible{ outline: 3px solid rgba(58,123,213,.45); outline-offset: 2px; border-radius: 12px; }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Go to top">
+          <span class="logo" aria-hidden="true"></span>
+          <span>Karen</span>
+        </a>
+
+        <nav class="navlinks" aria-label="Primary">
+          <a class="chip" href="#about">About</a>
+          <a class="chip" href="#projects">Projects</a>
+          <a class="chip" href="#experience">Experience</a>
+          <a class="chip" href="#contact">Contact</a>
+
+          <button class="btn" id="themeBtn" type="button" aria-pressed="false">
+            <span aria-hidden="true">🌤️</span>
+            <span id="themeLabel">Dawn</span>
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-label="Introduction">
+      <div class="heroGrid">
+        <div class="card heroMain">
+          <h1 class="headline">Huy Gia Han (Karen) Vu</h1>
+          <p class="sub">
+            I’m Karen - graduated from Northeastern University with a B.S. in Computer Science and Criminal Justice, with a goal of working in cybercrime, e-discovery, and information security.
+          </p>
+
+          <div class="pillRow" aria-label="Quick facts">
+            <span class="pill">🌊 <small>Systems / OS</small></span>
+            <span class="pill">🌸 <small>Security / CTF</small></span>
+            <span class="pill">🪷 <small>Research / Writing</small></span>
+            <span class="pill">🍃 <small>Teaching / Mentoring</small></span>
+          </div>
+
+          <div class="ctaRow">
+            <a class="btn ctaPrimary" href="#projects"><strong>See projects</strong> →</a>
+            <a class="btn" href="#contact">Contact me</a>
+            <a class="btn" href="#" id="resumeLink">Download resume</a>
+          </div>
+        </div>
+
+        <aside class="card heroSide" aria-label="Profile">
+          <div class="profile">
+            <div class="avatar" role="img" aria-label="Decorative profile placeholder"></div>
+            <div class="meta">
+              <h2>Portfolio</h2>
+              <p>Boston, MA</p>
+            </div>
+          </div>
+
+          <div class="miniGrid" aria-label="Highlights">
+            <div class="mini"><b>Focus</b><span> eDiscovery, Systems, Security, Solutions</span></div>
+            <div class="mini"><b>Stack</b><span> C/C++, Python, Java, SQL, DISCO (eDiscovery)</span></div>
+            <div class="mini"><b>Tools</b><span> Git, Docker</span></div>
+            <div class="mini"><b>Interests</b><span> ML + Data</span></div>
+          </div>
+
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" aria-label="About">
+      <h2 class="sectionTitle">About</h2>
+      <div class="grid2">
+        <div class="panel">
+          <p class="muted">
+            I’m interested in both the technical and legal sides of the field, and I’ve been involved in several research projects examining the social implications of crime. I’m eager to keep learning and to expand my professional network.
+          </p>
+          <div class="tags" aria-label="Skills">
+            <span class="tag">C / C++</span>
+            <span class="tag">Python</span>
+            <span class="tag">Java</span>
+            <span class="tag">Linux</span>
+            <span class="tag">SQL</span>
+            <span class="tag">React</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin:0 0 6px;">Something new I’m building</h3>
+          <ul class="muted" style="margin: 12px 0 0; padding-left: 18px;">
+            <li>🌿 Near-Repeat Crime Detector </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" aria-label="Projects">
+      <h2 class="sectionTitle">Projects</h2>
+
+      <div class="cards">
+        <article class="proj" aria-label="Project 1">
+          <h3>Near-Repeat Crime Detector / In progress</h3>
+          <p>Spatiotemporal clustering + map UI to surface near-repeat patterns and hot windows.</p>
+          <div class="row" aria-label="Tech used">
+            <span class="tag">Python</span><span class="tag">GeoPandas</span><span class="tag">Leaflet</span>
+          </div>
+          <div class="linkRow">
+            <a class="link" href="#">GitHub</a>
+            <a class="link" href="#">Live demo</a>
+          </div>
+        </article>
+
+        <article class="proj" aria-label="Project 2">
+          <h3>Mini Filesystem (FUSE)</h3>
+          <p>Built a user-space filesystem with inode/data layers + correctness tests.</p>
+          <div class="row">
+            <span class="tag">C</span><span class="tag">FUSE</span><span class="tag">Linux</span>
+          </div>
+          <div class="linkRow">
+            <a class="link" href="#">Github</a>
+            <a class="link" href="#">Repo (Available upon request)</a>
+          </div>
+        </article>
+
+        <article class="proj" aria-label="Project 3">
+          <h3>Ants-Doodlebugs Simulation</h3>
+          <p>Ants and doodlebugs simulation game</p>
+          <div class="row">
+            <span class="tag">C++</span><span class="tag">Linux</span>
+          </div>
+          <div class="linkRow">
+            <a class="link" href="#">GitHub</a>
+            <a class="link" href="#">Repo (Available upon request)</a>
+          </div>
+        </article>
+
+
+        <article class="proj" aria-label="Project 4">
+          <h3>Air Hockey Game</h3>
+          <p>Air hockey simulation game</p>
+          <div class="row">
+            <span class="tag">C++</span><span class="tag">Linux</span>
+          </div>
+          <div class="linkRow">
+            <a class="link" href="#">GitHub</a>
+            <a class="link" href="#">Repo (Available upon request)</a>
+          </div>
+        </article>
+
+        <article class="proj" aria-label="Project 5">
+          <h3>Message Credibility Scoring</h3>
+          <p>Pipeline for feature extraction + evaluation. Focus: URL-agnostic signals.</p>
+          <div class="row">
+            <span class="tag">NLP</span><span class="tag">ML</span><span class="tag">Data</span>
+          </div>
+          <div class="linkRow">
+            <a class="link" href="#">Paper</a>
+            <a class="link" href="#">Research</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" aria-label="Experience">
+      <h2 class="sectionTitle">Experience</h2>
+      <div class="grid2">
+        <div class="panel">
+          <div class="timeline">
+
+            <div class="item">
+              <div class="itemTop">
+                <b>Khoury Teaching Assistant / TA — Northeastern University</b>
+                <span>2025</span>
+              </div>
+              <p>Supported 500+ students in Computer Systems and Foundation of Cybersecurity with x86-64 assembly/C, Linux tooling, cyber topics and led weekly office hours + live debugging to drive root-cause fixes,
+                improved troubleshooting guides, and graded assignments/exams consistently across sections.</p>
+            </div>
+
+            <div class="item">
+              <div class="itemTop">
+                <b>Discovery Solutions — WilmerHale</b>
+                <span>2023 – 2024</span>
+              </div>
+              <p>Supported high-volume eDiscovery operations by troubleshooting data ingestion/processing under tight deadlines,
+                resolving 300+ DISCO/IT tickets, improving SOPs, producing recurring media reports, and managing/archiving hundreds of media matters for long-term retention.</p>
+            </div>
+
+
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin:0 0 6px;">Writing & Research</h3>
+          <ul class="muted" style="margin: 12px 0 0; padding-left: 18px;">
+            <li><a href="#">Paper</a> — Is school discipline decapitalizing America's youth?: Examining the effect of school discipline on family, peer, teacher, and school social capital / Co-Author</li>
+            <li><a href="#">Paper</a> — The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram / Co-Author</li>
+            <li><a href="#">Capstone / thesis</a> — Vietnam’s Capital Punishment: A Comparative Analysis of Death Penalty and Homicide Rates, 2001-2025</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-label="Contact">
+      <h2 class="sectionTitle">Contact</h2>
+      <div class="grid2">
+        <div class="panel">
+          <p style="margin-top:0;">
+            Want to connect? I’m open to internships / full-time roles / collaborations!
+          </p>
+          <div class="tags" aria-label="Links">
+            <a class="tag" href="#" id="githubLink">GitHub</a>
+            <a class="tag" href="#" target="_blank" rel="noopener noreferrer" id="linkedinLink">LinkedIn</a>
+            <a class="tag" href="#" id="portfolioLink">Resume PDF</a>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin:0 0 8px;">Email</h3>
+          <p class="muted" style="margin:0 0 8px;">Click to copy:</p>
+          <button class="btn" type="button" id="copyEmail" style="width: fit-content;">
+            ✉️ <span id="emailText">vuhuygiahan@gmail.com</span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <span>© <span id="year"></span> Karen • 🌿</span>
+      </div>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const $ = (sel) => document.querySelector(sel);
+
+    const toast = (msg) => {
+      const el = $('#toast');
+      el.textContent = msg;
+      el.classList.add('show');
+      window.clearTimeout(el._t);
+      el._t = window.setTimeout(() => el.classList.remove('show'), 1400);
+    };
+
+    // Year
+    $('#year').textContent = new Date().getFullYear();
+
+    // Theme toggle (persisted)
+    const themeBtn = $('#themeBtn');
+    const themeLabel = $('#themeLabel');
+
+    const setTheme = (t) => {
+      document.documentElement.setAttribute('data-theme', t);
+      const dawn = t !== 'twilight';
+      themeLabel.textContent = dawn ? 'Dawn' : 'Twilight';
+      themeBtn.setAttribute('aria-pressed', String(!dawn));
+      themeBtn.querySelector('span[aria-hidden="true"]').textContent = dawn ? '🌤️' : '🌙';
+      localStorage.setItem('theme', t);
+    };
+
+    const saved = localStorage.getItem('theme');
+    if (saved) setTheme(saved);
+
+    themeBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      setTheme(current === 'twilight' ? 'dawn' : 'twilight');
+      toast(current === 'twilight' ? 'Switched to Dawn 🌤️' : 'Switched to Twilight 🌙');
+    });
+
+    // Copy email
+    $('#copyEmail').addEventListener('click', async () => {
+      const email = $('#emailText').textContent.trim();
+      try{
+        await navigator.clipboard.writeText(email);
+        toast('Copied email ✨');
+      }catch{
+        // fallback
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        ta.remove();
+        toast('Copied email ✨');
+      }
+    });
+
+     $('#resumeLink').href = 'resume_2026.pdf';
+     $('#githubLink').href = 'https://github.com/karengiahan';
+     $('#linkedinLink').href = 'https://www.linkedin.com/in/huy-gia-han-vu/';
+
+  </script>
+</body>
 </html>
