@@ -39,11 +39,10 @@
     a { color: inherit; text-decoration: none; }
     a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-    .plain-link,
-      .plain-link:hover,
-      .plain-link:focus {
-        text-decoration: none;
-      }
+    .plain-link {
+      color: black;
+      text-decoration: none;
+    }
 
     .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
 
@@ -641,9 +640,16 @@
         <div class="container">
           <p class="hero-label">Portfolio</p>
           <h1>Huy Gia Han<br><em>(<span class="karen-blue">Karen</span>) Vu</em></h1>
+
           <p class="hero-bio">
-            Incoming Criminal Justice Ph.D. @<a class="plain-link" href="https://www.rutgers.edu" target="_blank" rel="noopener"><br><em>(<span class="scarlet">Rutgers University</span>)</em></a>
-            | Alum @<a class="plain-link" href="https://www.northeastern.edu" target="_blank" rel="noopener"><br><em>(<span class="red">Northeastern University</span>)</em></a>
+            Incoming Criminal Justice Ph.D. @
+            <a class="plain-link scarlet" href="https://www.rutgers.edu" target="_blank" rel="noopener">
+              <br><em>Rutgers University</em>
+            </a>
+            | Alum @
+            <a class="plain-link red" href="https://www.northeastern.edu" target="_blank" rel="noopener">
+              <br><em>Northeastern University</em>
+            </a>
           </p>
 
           <div class="facts" aria-label="Quick facts">
