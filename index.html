@@ -395,14 +395,16 @@
 
     .writing-row {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: 120px 1fr 160px;
       gap: 24px;
-      align-items: baseline;
-      padding: 20px 0;
+      align-items: start;
+      padding: 28px 0;
       border-top: 1px solid var(--rule);
     }
+    .writing-row:last-child { border-bottom: 1px solid var(--rule); }
 
     .writing-title {
+      display: block;
       font-size: 15px;
       line-height: 1.5;
       color: var(--ink);
@@ -411,17 +413,10 @@
     .writing-link {
       text-decoration: underline;
       text-underline-offset: 3px;
+      cursor: pointer;
     }
 
-    .writing-year {
-      font-size: 12px;
-      letter-spacing: .06em;
-      text-transform: uppercase;
-      color: var(--dim);
-      font-weight: 500;
-      white-space: nowrap;
-    }
-
+    .writing-year,
     .writing-role {
       font-size: 12px;
       letter-spacing: .06em;
@@ -429,6 +424,18 @@
       color: var(--dim);
       font-weight: 500;
       white-space: nowrap;
+      padding-top: 4px;
+    }
+
+    .writing-role { text-align: right; }
+
+    @media (max-width: 700px) {
+      .writing-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .writing-role { text-align: left; }
     }
 
     /*contact*/
@@ -540,8 +547,8 @@
         <a class="brand" href="#top">✨ Karen Vu</a>
         <nav class="navlinks" aria-label="Primary">
           <a href="#about">About</a>
+          <a href="#timeline">Timeline</a>
           <a href="#projects">Projects</a>
-          <a href="#experience">Experience</a>
           <a href="#contact">Contact</a>
           <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false">
             <span id="themeLabel">☽ Twilight</span>
@@ -712,8 +719,9 @@
           </div>
         </div>
       </div>
+    </section>
 
-          <!-- projects -->
+    <!-- projects -->
     <section id="projects" aria-label="Projects">
       <div class="container">
         <div class="section-header">
@@ -793,7 +801,6 @@
 
         </div>
       </div>
-    </section>
     </section>
 
     <!-- contact -->
