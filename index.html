@@ -391,9 +391,9 @@
       max-width: 60ch;
     }
 
-    .writing-list { display: grid; gap: 0; }
+    .pub-list { display: grid; gap: 0; }
 
-    .writing-row {
+    .pub-row {
       display: grid;
       grid-template-columns: 120px 1fr 160px;
       gap: 24px;
@@ -401,23 +401,23 @@
       padding: 28px 0;
       border-top: 1px solid var(--rule);
     }
-    .writing-row:last-child { border-bottom: 1px solid var(--rule); }
+    .pub-row:last-child { border-bottom: 1px solid var(--rule); }
 
-    .writing-title {
+    .pub-title {
       display: block;
       font-size: 15px;
       line-height: 1.5;
       color: var(--ink);
     }
 
-    .writing-link {
+    .pub-link {
       text-decoration: underline;
       text-underline-offset: 3px;
       cursor: pointer;
     }
 
-    .writing-year,
-    .writing-role {
+    .pub-year,
+    .pub-role {
       font-size: 12px;
       letter-spacing: .06em;
       text-transform: uppercase;
@@ -427,15 +427,15 @@
       padding-top: 4px;
     }
 
-    .writing-role { text-align: right; }
+    .pub-role { text-align: right; }
 
     @media (max-width: 700px) {
-      .writing-row {
+      .pub-row {
         grid-template-columns: 1fr;
         gap: 8px;
       }
 
-      .writing-role { text-align: left; }
+      .pub-role { text-align: left; }
     }
 
     /*contact*/
@@ -568,14 +568,6 @@
           Interest in cybercrime, e-discovery, and information security — where technical depth meets legal rigor.
         </p>
 
-        <div class="hero-pills" aria-label="Specializations">
-          <span class="pill">Legal Tech</span>
-          <span class="pill">Systems / OS</span>
-          <span class="pill">Security / CTF</span>
-          <span class="pill">Research</span>
-          <span class="pill">Teaching</span>
-        </div>
-
         <div class="hero-cta">
           <a class="btn-primary" href="#projects">View Projects</a>
           <a class="btn-ghost" href="resumes/Karen Vu Resume 2026.pdf" target="_blank" rel="noopener">Resume PDF</a>
@@ -697,24 +689,24 @@
           </div>
         </div>
 
-        <!-- writing -->
+        <!-- pub -->
         <div style="margin-top: 56px;">
-          <h3 style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:500; margin-bottom:24px; letter-spacing:-.2px;">Writing &amp; Research</h3>
-          <div class="writing-list">
-            <div class="writing-row">
-              <div class="writing-year">2025</div>
-              <a class="writing-title writing-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0047235225000170?via%3Dihub" target="_blank" rel="noopener">Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital</a>
-              <span class="writing-role">Co-Author</span>
+          <h3 style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:500; margin-bottom:24px; letter-spacing:-.2px;">Publications</h3>
+          <div class="pub-list">
+            <div class="pub-row">
+              <div class="pub-year">2025</div>
+              <a class="pub-title pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0047235225000170?via%3Dihub" target="_blank" rel="noopener">Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital</a>
+              <span class="pub-role">Co-Author</span>
             </div>
-            <div class="writing-row">
-              <div class="writing-year">2025</div>
-              <span class="writing-title">The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram</span>
-              <span class="writing-role">Co-Author</span>
+            <div class="pub-row">
+              <div class="pub-year">2025</div>
+              <span class="pub-title">The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram</span>
+              <span class="pub-role">Co-Author</span>
             </div>
-            <div class="writing-row">
-              <div class="writing-year">2025</div>
-              <span class="writing-title">Vietnam's Capital Punishment: A Comparative Analysis of Death Penalty and Homicide Rates, 2001–2025</span>
-              <span class="writing-role">Capstone / Thesis</span>
+            <div class="pub-row">
+              <div class="pub-year">2025</div>
+              <span class="pub-title">Vietnam's Capital Punishment: A Comparative Analysis of Death Penalty and Homicide Rates, 2001–2025</span>
+              <span class="pub-role">Capstone / Thesis</span>
             </div>
           </div>
         </div>
