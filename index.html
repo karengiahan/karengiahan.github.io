@@ -253,11 +253,24 @@
       color: var(--ink);
     }
 
-    .pub-link {
-      text-decoration: underline;
-      text-underline-offset: 3px;
-      cursor: pointer;
+    .pub-meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      align-items: flex-end;
+      padding-top: 4px;
     }
+
+    .pub-link {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--mid);
+      transition: color .15s;
+      white-space: nowrap;
+    }
+    .pub-link:hover { color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); }
 
     .pub-year,
     .pub-role {
@@ -551,6 +564,7 @@
       }
 
       .pub-role { text-align: left; }
+      .pub-meta { align-items: flex-start; }
 
       .proj-row {
         grid-template-columns: 1fr;
@@ -657,18 +671,23 @@
           <div class="pub-list">
             <div class="pub-row">
               <div class="pub-year">2025</div>
-              <a class="pub-title pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0047235225000170?via%3Dihub" target="_blank" rel="noopener">Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital</a>
-              <span class="pub-role">Co-Author</span>
+              <span class="pub-title">Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital</span>
+              <div class="pub-meta">
+                <span class="pub-role">Co-Author</span>
+                <a class="pub-link" href="https://www.sciencedirect.com/science/article/abs/pii/S0047235225000170?via%3Dihub" target="_blank" rel="noopener">Paper ↗</a>
+              </div>
             </div>
             <div class="pub-row">
               <div class="pub-year">2025</div>
               <span class="pub-title">The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram</span>
               <span class="pub-role">Co-Author</span>
+              <a class="pub-link" href="" target="_blank" rel="noopener">Paper ↗</a>
             </div>
             <div class="pub-row">
               <div class="pub-year">2025</div>
               <span class="pub-title">Vietnam's Capital Punishment: A Comparative Analysis of Death Penalty and Homicide Rates, 2001–2025</span>
-              <span class="pub-role">Capstone / Thesis</span>
+              <span class="pub-role">Capstone</span>
+              <a class="pub-link" href="" target="_blank" rel="noopener">Capstone ↗</a>
             </div>
           </div>
         </div>
