@@ -175,11 +175,11 @@
       display: inline-block;
       background: transparent;
       color: var(--ink);
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 500;
-      letter-spacing: .08em;
+      letter-spacing: .06em;
       text-transform: uppercase;
-      padding: 11px 22px;
+      padding: 9px 18px;
       border: 1px solid var(--rule);
       border-radius: 2px;
       transition: border-color .15s;
@@ -993,7 +993,7 @@
     const setTheme = t => {
       document.documentElement.setAttribute('data-theme', t);
       const dark = t === 'twilight';
-      themeLabel.textContent = dark ? '☀ Dawn' : '☽ Twilight';
+      themeLabel.textContent = dark ? '☀' : '☽';
       themeBtn.setAttribute('aria-pressed', String(dark));
       localStorage.setItem('theme', t);
     };
