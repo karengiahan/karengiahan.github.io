@@ -68,6 +68,18 @@
       font-weight: 500;
       letter-spacing: .3px;
       flex-shrink: 0;
+      color: var(--ink);
+    }
+
+    .brand,
+    .brand:visited {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .brand:hover {
+      color: var(--muted);
+      text-decoration: none;
     }
 
     .navlinks {
@@ -1005,7 +1017,7 @@
       const cur = document.documentElement.getAttribute('data-theme');
       const next = cur === 'twilight' ? 'dawn' : 'twilight';
       setTheme(next);
-      toast(next === 'twilight' ? 'Switched to Twilight' : 'Switched to Dawn');
+      toast(next === 'twilight' ? 'Switched to ☽' : 'Switched to ☀');
     });
 
     // Copy email
