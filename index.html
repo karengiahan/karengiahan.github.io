@@ -172,6 +172,13 @@
       align-items: center;
     }
 
+    .hero-research-interests {
+      font-size: 15px;
+      line-height: 1.5;
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
     .btn-primary {
       display: inline-block;
       background: var(--ink);
@@ -202,7 +209,7 @@
     }
     .btn-ghost:hover { border-color: var(--ink); text-decoration: none; }
 
-    .facts {
+    /* .facts {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid var(--rule);
@@ -229,7 +236,7 @@
       font-size: 14px;
       color: var(--ink);
       font-weight: 400;
-    }
+    } */
 
     /* Section */
     section { padding: 72px 0; border-bottom: 1px solid var(--rule); }
@@ -578,7 +585,7 @@
 
       section { padding: 56px 0; }
 
-      .facts { grid-template-columns: 1fr 1fr; }
+      /* .facts { grid-template-columns: 1fr 1fr; } */
 
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
 
@@ -611,7 +618,7 @@
     }
 
     @media (max-width: 480px) {
-      .facts { grid-template-columns: 1fr; }
+      /* .facts { grid-template-columns: 1fr; } */
 
       .hero-cta,
       .contact-links {
@@ -650,34 +657,28 @@
   <main id="top">
 
     <!-- Main website-->
-    <div id="homePage" class="home-page">
-      <!-- hero -->
-      <section class="hero" aria-label="Introduction">
-        <div class="container">
-          <p class="hero-label">Portfolio</p>
-          <h1>Huy Gia Han<br><em><span class="baby-blue">Karen</span> Vu</em></h1>
+    <div id="homePage" class="home-page"> 
+        <section class="hero" aria-label="Introduction"> 
+            <div class="container"> 
+            <p class="hero-label">Portfolio</p> 
+            <h1>Huy Gia Han<br><em><span class="baby-blue">Karen</span> Vu</em></h1> 
+            
+            <p class="hero-bio"> 
+                Incoming Criminal Justice Ph.D. @ <a class="plain-link scarlet" href="https://www.rutgers.edu" target="_blank" rel="noopener"><em>Rutgers University</em></a> 
+                <br> 
+                Computer Science & Criminal Justice Alum @ <a class="plain-link red" href="https://www.northeastern.edu" target="_blank" rel="noopener"><em>Northeastern University</em></a> 
+            </p> 
 
-          <p class="hero-bio">
-            Incoming Criminal Justice Ph.D. @
-            <a class="plain-link scarlet" href="https://www.rutgers.edu" target="_blank" rel="noopener">
-              <em>Rutgers University</em>
-            </a>
-            <br>
-            Computer Science & Criminal Justice Alum @
-            <a class="plain-link red" href="https://www.northeastern.edu" target="_blank" rel="noopener">
-              <em>Northeastern University</em>
-            </a>
-          </p>
-
-          <div class="facts" aria-label="Quick facts">
-            <div class="fact">
-              <div class="fact-label">Focus</div>
-              <div class="fact-value">Cybercrime, AI-enabled crime, Cross-national financial crime, Crime mapping, eDiscovery</div>
+            <p class="hero-research-interests">
+                <strong>Research Interests:</strong> Cybercrime, Cross-national financial crime, Computational criminology
+            </p>
             </div>
-            <div class="fact">
+        </section>
+        </div>
+            <!-- <div class="fact">
               <div class="fact-label">Languages</div>
               <div class="fact-value">C/C++, Python, Java, SQL, Assembly x86, Bash/Shell</div>
-            </div>
+            </div> -->
             <!-- <div class="fact">
               <div class="fact-label">Tools</div>
               <div class="fact-value">Git, Docker, PostgreSQL, Power BI, Flask</div>
@@ -701,17 +702,25 @@
           <div class="pub-list">
             <div class="pub-row">
               <div class="pub-year">2025</div>
-              <span class="pub-title">Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital <a href="https://www.sciencedirect.com/science/article/abs/pii/S0047235225000170?via%3Dihub" target="_blank" rel="noopener">Paper ↗</a></span>
-              <div class="pub-meta">
+              <span class="pub-title">
+                <a href="https://www.sciencedirect.com/science/article/abs/pii/S0047235225000170?via%3Dihub">
+                    Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital
+                </a>
+                </span>
+                <div class="pub-meta">
                 <span class="pub-role">Co-Author</span>
               </div>
             </div>
             <div class="pub-row">
               <div class="pub-year">2025</div>
-              <span class="pub-title">The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram <a href="https://doi.org/10.48550/arXiv.2601.13294" target="_blank" rel="noopener">Paper ↗</a></span>
-              <div class="pub-meta">
+              <span class="pub-title">
+                <a href="https://doi.org/10.48550/arXiv.2601.13294">
+                    The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram
+                </a>
+                </span>
+                <div class="pub-meta">
                 <span class="pub-role">Co-Author</span>
-              </div>
+            </div>
             </div>
             <!-- <div class="pub-row">
               <div class="pub-year">2025</div>
