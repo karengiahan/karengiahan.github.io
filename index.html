@@ -150,11 +150,8 @@
     }
 
     .baby-blue { color: #89cff0; }
-
     .light-purple { color: #cbc3e8; }
-
     .scarlet:hover { color: #cd250b; }
-
     .red:hover { color: #e72727; }
 
     .hero-bio {
@@ -208,35 +205,6 @@
       transition: border-color .15s;
     }
     .btn-ghost:hover { border-color: var(--ink); text-decoration: none; }
-
-    /* .facts {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      border-top: 1px solid var(--rule);
-      border-left: 1px solid var(--rule);
-      margin-top: 64px;
-    }
-
-    .fact {
-      border-right: 1px solid var(--rule);
-      border-bottom: 1px solid var(--rule);
-      padding: 20px 18px;
-    }
-
-    .fact-label {
-      font-size: 11px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: var(--dim);
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-
-    .fact-value {
-      font-size: 14px;
-      color: var(--ink);
-      font-weight: 400;
-    } */
 
     /* Section */
     section { padding: 72px 0; border-bottom: 1px solid var(--rule); }
@@ -585,8 +553,6 @@
 
       section { padding: 56px 0; }
 
-      /* .facts { grid-template-columns: 1fr 1fr; } */
-
       .about-grid { grid-template-columns: 1fr; gap: 32px; }
 
       .pub-row {
@@ -618,8 +584,6 @@
     }
 
     @media (max-width: 480px) {
-      /* .facts { grid-template-columns: 1fr; } */
-
       .hero-cta,
       .contact-links {
         flex-direction: column;
@@ -644,7 +608,6 @@
         <nav class="navlinks" aria-label="Primary">
           <a href="#about" data-page="about">About</a>
           <a href="#publications" data-page="home">Publications</a>
-          <!-- <a href="#projects" data-page="home">Projects</a> -->
           <a href="resumes/Karen Vu Resume 2026.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
           <button class="theme-btn" id="themeBtn" type="button" aria-pressed="false">
             <span id="themeLabel">☽</span>
@@ -656,42 +619,26 @@
 
   <main id="top">
 
-    <!-- Main website-->
+    <!-- HOME PAGE -->
     <div id="homePage" class="home-page"> 
-        <section class="hero" aria-label="Introduction"> 
-            <div class="container"> 
-            <p class="hero-label">Portfolio</p> 
-            <h1>Huy Gia Han<br><em><span class="baby-blue">Karen</span> Vu</em></h1> 
-            
-            <p class="hero-bio"> 
-                Incoming Criminal Justice Ph.D. @ <a class="plain-link scarlet" href="https://www.rutgers.edu" target="_blank" rel="noopener"><em>Rutgers University</em></a> 
-                <br> 
-                Computer Science & Criminal Justice Alum @ <a class="plain-link red" href="https://www.northeastern.edu" target="_blank" rel="noopener"><em>Northeastern University</em></a> 
-            </p> 
+      <section class="hero" aria-label="Introduction"> 
+        <div class="container"> 
+          <p class="hero-label">Portfolio</p> 
+          <h1>Huy Gia Han<br><em><span class="baby-blue">Karen</span> Vu</em></h1> 
+          
+          <p class="hero-bio"> 
+            Incoming Criminal Justice Ph.D. @ <a class="plain-link scarlet" href="https://www.rutgers.edu" target="_blank" rel="noopener"><em>Rutgers University</em></a> 
+            <br> 
+            Computer Science & Criminal Justice Alum @ <a class="plain-link red" href="https://www.northeastern.edu" target="_blank" rel="noopener"><em>Northeastern University</em></a> 
+          </p> 
 
-            <p class="hero-research-interests">
-                <strong>Research Interests:</strong> Cybercrime, Cross-national financial crime, Computational criminology
-            </p>
-            </div>
-        </section>
-        </div>
-            <!-- <div class="fact">
-              <div class="fact-label">Languages</div>
-              <div class="fact-value">C/C++, Python, Java, SQL, Assembly x86, Bash/Shell</div>
-            </div> -->
-            <!-- <div class="fact">
-              <div class="fact-label">Tools</div>
-              <div class="fact-value">Git, Docker, PostgreSQL, Power BI, Flask</div>
-            </div>
-            <div class="fact">
-              <div class="fact-label">Certifications</div>
-              <div class="fact-value">DISCO Data Management &amp; Search/Review</div>
-            </div> -->
-          </div>
+          <p class="hero-research-interests">
+            <strong>Research Interests:</strong> Cybercrime, Cross-national financial crime, Computational criminology
+          </p>
         </div>
       </section>
 
-      <!-- publications -->
+      <!-- Publications -->
       <section id="publications" aria-label="Publications">
         <div class="container">
           <div class="section-header">
@@ -704,106 +651,34 @@
               <div class="pub-year">2025</div>
               <span class="pub-title">
                 <a href="https://www.sciencedirect.com/science/article/abs/pii/S0047235225000170?via%3Dihub">
-                    Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital
+                  Is school discipline decapitalizing America's youth? Examining the effect of school discipline on family, peer, teacher, and school social capital
                 </a>
-                </span>
-                <div class="pub-meta">
+              </span>
+              <div class="pub-meta">
                 <span class="pub-role">Co-Author</span>
               </div>
             </div>
+
             <div class="pub-row">
               <div class="pub-year">2025</div>
               <span class="pub-title">
                 <a href="https://doi.org/10.48550/arXiv.2601.13294">
-                    The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram
+                  The Tag is the Signal: URL-Agnostic Credibility Scoring for Messages on Telegram
                 </a>
-                </span>
-                <div class="pub-meta">
+              </span>
+              <div class="pub-meta">
                 <span class="pub-role">Co-Author</span>
+              </div>
             </div>
-            </div>
-            <!-- <div class="pub-row">
-              <div class="pub-year">2025</div>
-              <span class="pub-title">Capstone: Vietnam's Capital Punishment: A Comparative Analysis of Death Penalty and Homicide Rates, 2001–2025</span>
-            </div> -->
           </div>
         </div>
       </section>
 
-      <!-- projects -->
-      <!-- <section id="projects" aria-label="Projects">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-num">02</span>
-            <h2 class="section-title">Projects</h2>
-          </div>
-          <div class="proj-list">
-
-            <div class="proj-row">
-              <div>
-                <div class="proj-title">Near-Repeat Crime Detector <em style="font-size:13px; font-family:'DM Sans',sans-serif; color:var(--dim);">In progress</em></div>
-                <p class="proj-desc">Spatiotemporal clustering and map UI to surface near-repeat patterns and hot windows in crime data.</p>
-                <div class="proj-tags">
-                  <span class="tag">Python</span><span class="tag">GeoPandas</span><span class="tag">Leaflet</span>
-                </div>
-              </div>
-              <div class="proj-links">
-                <a class="proj-link" href="#contact">GitHub ↗</a>
-                <a class="contact-link" href="#contact">Repo on request</a>
-              </div>
-            </div>
-
-            <div class="proj-row">
-              <div>
-                <div class="proj-title">Mini Filesystem (FUSE)</div>
-                <p class="proj-desc">User-space filesystem with inode/data layers, built in C, with correctness tests.</p>
-                <div class="proj-tags">
-                  <span class="tag">C</span><span class="tag">FUSE</span><span class="tag">Linux</span>
-                </div>
-              </div>
-              <div class="proj-links">
-                <a class="proj-link" href="#contact">GitHub ↗</a>
-                <a class="contact-link" href="#contact">Repo on request</a>
-              </div>
-            </div>
-
-            <div class="proj-row">
-              <div>
-                <div class="proj-title">Ants–Doodlebugs Simulation</div>
-                <p class="proj-desc">Predator–prey cellular automaton simulation built in C++ on Linux.</p>
-                <div class="proj-tags">
-                  <span class="tag">C++</span><span class="tag">Linux</span>
-                </div>
-              </div>
-              <div class="proj-links">
-                <a class="proj-link" href="#contact">GitHub ↗</a>
-                <a class="contact-link" href="#contact">Repo on request</a>
-              </div>
-            </div>
-
-            <div class="proj-row">
-              <div>
-                <div class="proj-title">Air Hockey Game</div>
-                <p class="proj-desc">Physics-based air hockey simulation game.</p>
-                <div class="proj-tags">
-                  <span class="tag">C++</span><span class="tag">Linux</span>
-                </div>
-              </div>
-              <div class="proj-links">
-                <a class="proj-link" href="#contact">GitHub ↗</a>
-                <a class="contact-link" href="#contact">Repo on request</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </section> -->
-
-      <!-- contact -->
+      <!-- Contact -->
       <section id="contact" aria-label="Contact">
         <div class="container">
           <div class="section-header">
-            <span class="section-num">03</span>
+            <span class="section-num">02</span>
             <h2 class="section-title">Contact</h2>
           </div>
           <div class="contact-inner">
@@ -818,8 +693,9 @@
           </div>
         </div>
       </section>
+    </div>
 
-    <!-- about page -->
+    <!-- ABOUT PAGE -->
     <div id="aboutPage" class="subpage" aria-label="About page">
       <section class="about-page-hero">
         <div class="container">
